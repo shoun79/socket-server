@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+</head>
+
+<body>
+    <h1 id="heading">Explore socket.io</h1>
+    <!-- <input type="text" id="name">
+    <input type="text" id="phone">
+    <button onclick="handleSend()">Send</button> -->
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io("/cricketCup");
+        // socket.on("message", (data) => {
+        //     console.log(data);
+        // })
+
+
+
+        // const handleSend = () => {
+        //     const name = document.getElementById('name').value;
+        //     const phone = document.getElementById('phone').value;
+
+        //     socket.send({ name, phone });
+
+        //     socket.emit("testEvent", { name, phone })
+        // }
+
+        //=====for all
+        // socket.on("me", (data) => {
+        //     document.getElementById("heading").innerText = data;
+        // })
+
+        socket.on("cricketCupEvent", (data) => {
+            console.log(data);
+            document.getElementById("heading").innerText = data
+        })
+
+
+    </script>
+</body>
+
+</html>
